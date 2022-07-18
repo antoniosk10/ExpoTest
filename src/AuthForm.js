@@ -2,7 +2,7 @@ import React from "react";
 import { Button, StyleSheet, Text, TextInput, View } from "react-native";
 import { useForm, Controller } from "react-hook-form";
 
-export default function AuthForm({ setUser }) {
+export default function AuthForm({ navigation }) {
   const {
     control,
     handleSubmit,
@@ -16,7 +16,7 @@ export default function AuthForm({ setUser }) {
 
   const onSubmit = (data) => {
     const user = data; //TODO: request to endpoint
-    setUser(user);
+    navigation.navigate("WebViewScreen", { user });
   };
 
   return (
